@@ -124,10 +124,10 @@ print ("HANGMAN\nNOTE! You have 10 chances to guess.")
 #    steps = list(lines)
 #    print (steps[0])
 
-# Drukujemy obrazek poczatkowy
+# Printing the initial image
 print (steps[0])
 
-# Plik ze slowami, podany jako argument, bedzie przeczytany i zostanie wylosowane slowo
+# The file containig words given as the argument will be read and the word will be drawn
 with open(sys.argv[1], "r") as f:
     lines = f.readlines()
     nl_number = len(lines)
@@ -140,37 +140,37 @@ covered = "_" * word_length
 chances = 10
 
 print (covered, "[", word_length, "liter ]")
-print ("Podaj litere by zgadnac slowo.\n")
+print ("Enter a letter to guess a word.\n")
 
-# Tok gry (sprawdzanie, czy podana litera jest "poprawna" i nastepujace zwiazane z tym operacje
-# outputu
-# k - zmienna do iteracii po obrazkach
+# Game flow (checking is the specified letter is "correct" and the following output operations 
+# k - image iteration variable
 k = 0
 wykorzystane_litery = []
-# dopoki uzytkownik nie wykorzysta wszystkich szans:
+# until the user seizes all the chances:
 while chances:
-    letter = input("Podales: ")
+    letter = input("You have entered: ")
     if letter in word:
         wykorzystane_litery.append(letter)
-        print ("Zgadles juz: ", wykorzystane_litery)
+        print ("You already guessed: ", wykorzystane_litery)
         for i in range(len(word)):
             if letter == word[i]:
                 covered_list = list(covered)
                 covered_list[i] = word[i]
                 covered = "".join(covered_list)
             if "_" not in covered:
-                print ("BRAVO! Wygrales!")
-                sys.exit("Szukanym slowem bylo: " + covered)
+                print ("BRAVO! You win!")
+                sys.exit("The searched word was: " + covered)
     else:
         k += 1
         chances -= 1
-        print ("Zla literka. Tracisz szanse (masz obecnie:", chances, ")")
-        print ("Zgadles juz: ", wykorzystane_litery)
+        print ("Bad letter. You're losing your chances (you currently have:", chances, ")")
+        print ("You already guessed: ", wykorzystane_litery)
 
-# ponizsze drukowanie pozwala uzytkownikowi widziec, jak  mu idzie
+# the printing below allows the user to see how he is doing
     print (covered)
     print (steps[k])
 
-# jesli uzytkownik wczesniej nie zgadl slowa i nie skonczyl, to poniewaz
-# wykorzystal wszystkie szanse, to przegral (rukuje sie odpowiedni komunikat)
-print ("PRZEGRALES. Szukanym slowem bylo:", word)
+# if the user did not guess the word before and finished  because
+# he used all the chances, he lost (an appropriate message is printed)
+
+print ("YOU LOST. Searched word was:", word)
