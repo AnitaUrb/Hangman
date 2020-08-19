@@ -6,7 +6,7 @@ print ("HANGMAN\nNOTE! You have 10 chances to guess.")
 
 
 # loading images from file and printing the initial image
-with open("tok.txt", "r") as f:
+with open("game_flow.txt", "r") as f:
    lines = f.read().split(',')
    steps = list(lines)
    print (steps[0])
