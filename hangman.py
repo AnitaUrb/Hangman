@@ -1,131 +1,16 @@
 import random
 import sys
 
-steps = ['''
-       _
-       |     
-       |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-''' 
-     ___
-       |     
-       |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-'''
-   _____
-       |     
-       |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-'''
- _______
-       |     
-       |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-'''
- _______
- |     |     
-       |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-
-'''
- _______
- |     |     
- O     |    
-       |    
-       |    
-       |
-       |
-       |
-=========== ''',
-'''
- _______
- |     |
- 0     |
-/      |
-       |
-       |
-       |
-       |
-=========== ''',
-'''
- _______
- |     |
- 0     |
-/|     |
-       |
-       |
-       |
-       |
-=========== ''',
-
-'''
- _______
- |     |
- 0     |
-/|\    |
-       |
-       |
-       |
-       |
-=========== ''',
-'''
- _______
- |     |
- 0     |
-/|\    |
-/      |
-       |
-       |
-       |
-=========== ''',
-'''
- _______
- |     |
- 0     |
-/|\    |
-/ \    |
-       |
-       |
-       |
-=========== ''',]
 
 print ("HANGMAN\nNOTE! You have 10 chances to guess.")
 
-# Ponizszy kawalek mozna uruchomic w przypadku, gdyby sie mialo zapisane wszystkie powyzsze obrazki w
-# pliku (niestety, nie moge go zalaczyc)
-# (w tym pliku obrazki sa rozdzielone przecinkami)
-#with open("tok.txt", "r") as f:
-#    lines = f.read().split(',')
-#    steps = list(lines)
-#    print (steps[0])
 
-# Printing the initial image
-print (steps[0])
+# loading images from file and printing the initial image
+with open("tok.txt", "r") as f:
+   lines = f.read().split(',')
+   steps = list(lines)
+   print (steps[0])
+
 
 # The file containig words given as the argument will be read and the word will be drawn
 with open(sys.argv[1], "r") as f:
@@ -148,7 +33,7 @@ k = 0
 wykorzystane_litery = []
 # until the user seizes all the chances:
 while chances:
-    letter = input("You have entered: ")
+    letter = input("Enter a letter: ")
     if letter in word:
         wykorzystane_litery.append(letter)
         print ("You already guessed: ", wykorzystane_litery)
