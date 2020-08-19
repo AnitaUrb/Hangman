@@ -1,4 +1,3 @@
-# Uwaga: trzeba uzywac Pythona3 (inaczej bedzie wydawal bledy, zwiazane z inputem uzytkownika)
 import random
 import sys
 
@@ -115,7 +114,7 @@ steps = ['''
        |
 =========== ''',]
 
-print ("WISIELIEC\nUWAGA! Masz 10 szans na zgadniecie.")
+print ("HANGMAN\nNOTE! You have 10 chances to guess.")
 
 # Ponizszy kawalek mozna uruchomic w przypadku, gdyby sie mialo zapisane wszystkie powyzsze obrazki w
 # pliku (niestety, nie moge go zalaczyc)
