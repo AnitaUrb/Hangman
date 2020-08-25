@@ -2,7 +2,7 @@ import random
 import sys
 
 
-print ("HANGMAN GAME\nYou have 10 attempts to guess.\n")
+print ("HANGMAN GAME\nYou have 10 attempts to guess.\nAttention! Program is case-sensitive.\n")
 
 
 # loading drawings from "game_flow.txt" file and printing the initial one:
