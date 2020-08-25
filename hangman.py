@@ -2,7 +2,7 @@ import random
 import sys
 
 
-print ("HANGMAN\nYou have 10 attempts to guess.")
+print ("HANGMAN GAME\nYou have 10 attempts to guess.\n")
 
 
 # loading drawings from "game_flow.txt" file and printing the initial one:
@@ -24,8 +24,8 @@ word_length = len(word)
 covered = "_" * word_length
 chances = 10
 
-print (covered, "[", word_length, "liter ]")
-print ("Enter a letter to guess the word.\n")
+print (covered, "[", word_length, "letters ]")
+print ("Enter the letters to guess the word.\n")
 
 # Game flow (checking is the entered letter is "correct" and the following output operations: 
 # k - drawing iteration variable
@@ -33,23 +33,23 @@ k = 0
 used_letters = []
 # until the user seizes all the chances:
 while chances:
-    letter = input("Your letter: ")
+    letter = input("Enter your letter: ")
     if letter in word:
-        used_letters.append(letter)
-        print ("Good!/nYou already guessed: ", used_letters)
         for i in range(len(word)):
             if letter == word[i]:
                 covered_list = list(covered)
                 covered_list[i] = word[i]
                 covered = "".join(covered_list)
             if "_" not in covered:
-                print ("WELL DONE! You win!")
+                print ("WELL DONE! You won!")
                 sys.exit("The covered word was: " + covered)
+        used_letters.append(letter)
+        print ("Good! Already guessed letters: ", used_letters)
     else:
         k += 1
         chances -= 1
-        print ("Bad letter. You're losing your chances (you currently have:", chances, ")")
-        print ("You already guessed: ", used_letters)
+        print ("Bad letter :(. Attempts left:", chances)
+        print ("Already guessed: ", used_letters)
 
 # the printing below allows the user to see how he is doing
     print (covered)
@@ -58,4 +58,4 @@ while chances:
 # if the user did not guess the word and finished,
 # the following message will be printed:
 
-print ("YOU LOST. Covered word was:", word)
+print ("YOU LOST.\nThe covered word was:", word)
