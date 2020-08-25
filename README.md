@@ -1,6 +1,6 @@
 # Hangman
 
-Note: requires Python3 (otherwise errors related to user input will be produced).
+Note: requires *Python3* (otherwise errors related to user input will be produced).
 
 To start the game:<br />
 terminal:    *path_to_hangman.py file_with_words*
