@@ -2,7 +2,7 @@ import random
 import sys
 
 
-print ("HANGMAN\nNOTE! You have 10 attempts to guess.")
+print ("HANGMAN\nYou have 10 attempts to guess.")
 
 
 # loading drawings from "game_flow.txt" file and printing the initial one:
@@ -25,7 +25,7 @@ covered = "_" * word_length
 chances = 10
 
 print (covered, "[", word_length, "liter ]")
-print ("Enter a letter to guess a word.\n")
+print ("Enter a letter to guess the word.\n")
 
 # Game flow (checking is the entered letter is "correct" and the following output operations: 
 # k - drawing iteration variable
@@ -33,10 +33,10 @@ k = 0
 used_letters = []
 # until the user seizes all the chances:
 while chances:
-    letter = input("Enter a letter: ")
+    letter = input("Your letter: ")
     if letter in word:
         used_letters.append(letter)
-        print ("You already guessed: ", used_letters)
+        print ("Good!/nYou already guessed: ", used_letters)
         for i in range(len(word)):
             if letter == word[i]:
                 covered_list = list(covered)
