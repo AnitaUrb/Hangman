@@ -1,12 +1,10 @@
 # Hangman
 
-A simple version of the popular [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) game with the only difference that the game uses a randomly selected word from a limited set of words.<br /> 
+A simple version of the popular [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) game with the only difference that the game uses a randomly selected word from a limited set of words. That set of words that can be used in the game are placed in .txt file separated by new line. Example file: *list_of_words.txt*. <br />
 
-A set of words that can be used in the game are placed in .txt file separated by new line. Example file: *list_of_words.txt*. <br />
+*game_flow.txt* file contains drawings of the game progress, it should be immutable and downloaded to the same direction as the *hangman.py* file. <br />
 
-*game_flow.txt* file contains drawings of the game progress (do not change!). <br />
-
-User follows the instructions displayed on the screen, like *"Enter a letter"*; additional information like number of attempts is also displayed. Program is *case-sensitive*.<br />
+User follows the instructions displayed on the screen, like *"Enter your letter"*; additional information like number of attempts is also displayed. Program is *case-sensitive*.<br />
 
 To start the game:<br />
 
