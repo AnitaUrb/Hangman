@@ -8,7 +8,7 @@ User follows the instructions on the screen, like *"Enter your letter"*; additio
 
 To start the game:<br />
 
-call:```~$ path_to_hangman.py path_to_file_with_words```<br />
+call:~$ *path_to_hangman.py path_to_file_with_words*<br />
 
 Note: Requires *Python3* (otherwise user input errors will be generated).<br />
 
